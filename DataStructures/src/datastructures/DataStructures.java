@@ -1,6 +1,7 @@
 /*
 Christopher Briceño 
 Main para Estructura de datos
+Profesor Kenneth Alvarado,
 */
 package datastructures;
 public class DataStructures {
