@@ -28,7 +28,13 @@ public class Recursividad {
     }
     */
     
-    /*
+     
+    
+    
+    /* 
+    ###Recursividad en arreglos 
+   
+    Encontrar el numero max en un arreglo con recursividad
     public static int encontrarMax(int[] numeros, int indice,int max ){
       if(indice!=numeros.length)
       {
@@ -43,5 +49,22 @@ public class Recursividad {
       }
       return max;
     }
+    Encontrar Indice en un arreglo con recursividad
+    public static int encontrarIndice(int[] numeros, int indice,int max,int pos){
+      
+      if(indice!=numeros.length)
+      {
+          if (numeros[indice]>max)
+          {
+             pos= encontrarIndice(numeros,indice +1,numeros[indice],indice);
+          }
+          else
+          {
+            pos= encontrarIndice(numeros,indice +1,max,pos);
+          }  
+      }
+      return pos;
+    }
     */
+   
 }

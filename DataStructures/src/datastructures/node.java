@@ -8,31 +8,35 @@ package datastructures;
 Clase 2
 Nodos
 */
-public class node {
-    private int value;
-    private node next;
+public class node<T> {
+    private T value;
+    private node<T> next; // Apunta al siguiente nodo
 
     //Constructor
-    public node() {
-        this.value = 0;
-        this.next = null;
-    }
 
-    //Acceder a los atributos por medio de metodos
-    public int getValue() {
+    public node(T value) {
+        this.value = value;
+        this.next = next;
+    }
+    
+   //Get accede a value desde otra clase
+    public T getValue() {
         return value;
     }
-
+    // Set modifica el valor desde otra clase
+    public void setValue(T value) {
+        this.value = value;
+    }
+    //Get accede a value desde otra clase nodo next
     public node getNext() {
         return next;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public void setNext(node next) {
+    public void setNext(node<T> next) {
         this.next = next;
     }
+
+    
+    
     
 }
