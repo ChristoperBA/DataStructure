@@ -26,17 +26,27 @@ public class DataStructures {
     
     //---------------------------Pilas-------------------------//
     //Semana 3
-    /*
-    stack <String> Pila= new stack<String>();
-    Pila.push("Jose");
-    Pila.push("Maria");
-    Pila.push("Pablo");
-    Pila.push("Chris");
-    Pila.push("Kenneth");
-    System.out.println(Pila.pop());//borra el ultimo elemento agregado en la pila
-    */
+    
+//    stack <String> Pila= new stack<String>();
+//    Pila.push("Jose");
+//    Pila.push("Maria");
+//    Pila.push("Pablo");
+//    Pila.push("Chris");
+//    Pila.push("Kenneth");
+//    System.out.println();//Pila.pop borra el ultimo elemento agregado en la pila
+   
     //stack <String> Pilanumero= new stack<String>();
     //---------------------------Colas-------------------------//
+    queue<Integer> Cola = new queue<Integer>();
+    Cola.enqueue(10);
+    Cola.enqueue(15);
+    Cola.enqueue(13);
+    Cola.enqueue(135);
+    Cola.enqueue(153);
+    //Cola.dequeue();
+    
+    //System.out.println(Cola.dequeue().getValue());
+    
     }
 }
 
