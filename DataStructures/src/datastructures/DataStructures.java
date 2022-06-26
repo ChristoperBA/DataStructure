@@ -37,16 +37,22 @@ public class DataStructures {
    
     //stack <String> Pilanumero= new stack<String>();
     //---------------------------Colas-------------------------//
-    queue<Integer> Cola = new queue<Integer>();
-    Cola.enqueue(10);
-    Cola.enqueue(15);
-    Cola.enqueue(13);
-    Cola.enqueue(135);
-    Cola.enqueue(153);
+//    queue<Integer> Cola = new queue<Integer>();
+//    Cola.enqueue(10);
+//    Cola.enqueue(15);
+//    Cola.enqueue(13);
+//    Cola.enqueue(135);
+//    Cola.enqueue(153);
     //Cola.dequeue();
     
     //System.out.println(Cola.dequeue().getValue());
     
+    //---------------------------Listas Simples-------------------------//
+    Lista<Persona> Lista= new Lista();
+    Lista.insertar(new Persona(10, "Juan"));
+    Lista.insertar(new Persona(5, "Sofia"));
+    Lista.insertar(new Persona(10, "Julian"));
+    Lista.imprimirLista();
     }
 }
 
