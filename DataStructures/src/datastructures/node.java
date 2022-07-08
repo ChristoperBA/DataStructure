@@ -20,8 +20,8 @@ public class node<T> {
     }
     
    //Get accede a value desde otra clase
-    public T getValue() {
-        return value;
+    public Persona getValue() {
+        return (Persona) value;
     }
     // Set modifica el valor desde otra clase
     public void setValue(T value) {

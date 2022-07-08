@@ -34,6 +34,7 @@ public class DataStructures {
 //    Pila.push("Chris");
 //    Pila.push("Kenneth");
 //    System.out.println();//Pila.pop borra el ultimo elemento agregado en la pila
+//    Cambiar en clase node linea 23 
    
     //stack <String> Pilanumero= new stack<String>();
     //---------------------------Colas-------------------------//
@@ -48,11 +49,33 @@ public class DataStructures {
     //System.out.println(Cola.dequeue().getValue());
     
     //---------------------------Listas Simples-------------------------//
-    Lista<Persona> Lista= new Lista();
+    List Lista= new List();
+    
     Lista.insertar(new Persona(10, "Juan"));
-    Lista.insertar(new Persona(5, "Sofia"));
-    Lista.insertar(new Persona(10, "Julian"));
+    Lista.insertar(new Persona(120, "Julian"));
+    Lista.insertar(new Persona(330, "Josw"));
+    Lista.insertar(new Persona(2, "Maria"));
     Lista.imprimirLista();
+    
+    // Extrae si funciona 
+    // Lista.extrae(330);
+    // System.out.println("\n");
+    // Lista.imprimirLista();
+    
+   
+   //Existe
+   System.out.println(Lista.existe(1201));
+   
+   
+   // Modifica no lo modifica
+   // Lista.modifica(new Persona(100,"Sofia"));
+   // Lista.imprimirLista();
+   
+   // Elimina solo elimina el primero
+   // Lista.elimina(12); solo elimina el primero
+   // System.out.println("Eliminado\n");
+   // Lista.imprimirLista();
+    
     }
 }
 
