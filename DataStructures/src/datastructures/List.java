@@ -75,6 +75,7 @@ public class List {
         {
             aux.getValue().setNombre(p.getNombre());
         }
+        
     }
 
     public Persona extrae(int id) {

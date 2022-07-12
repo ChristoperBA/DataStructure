@@ -22,15 +22,15 @@ public class stack<T> {
     
     }
     //void quitar el ultimo elemento y si es node devuelve node
-    public T pop(){
-    node<T> aux=top;
-    if(top!=null){
-        top=top.getNext();
-        return aux.getValue();
-    }else{
-        return null;
-    }
-    
-    
-    }
+//    public T pop(){
+//    node<T> aux=top;
+//    if(top!=null){
+//        top=top.getNext();
+//        return aux.getValue();
+//    }else{
+//        return null;
+//    }
+//    
+//    
+//    }
 }
