@@ -73,7 +73,7 @@ public class ListaCircularSimple {
         {
             return true;
         }
-        aux=aux.getNext();
+        aux = aux.getNext();
         while (aux != head)
         {
             if (aux.getValue().getId() == id)
@@ -92,27 +92,108 @@ public class ListaCircularSimple {
         Scanner teclado = new Scanner(System.in);
         System.out.println("Se le cambiara el nombre ");
         namemodif = teclado.nextLine();
+
         if (id == head.getValue().getId())
         {
 
-            aux.getValue().setNombre(namemodif);
-        }
-        if (id == tail.getValue().getId())
+            head.getValue().setNombre(namemodif);
+
+        } else if (id == tail.getValue().getId())
         {
 
-            aux.getValue().setNombre(namemodif);
-        }
-
-        aux = aux.getNext();
-        while (aux != head)
+            tail.getValue().setNombre(namemodif);
+        } else
         {
-            if (aux.getValue().getId() == id)
-            {
-                aux.getValue().setNombre(namemodif);
-                break;
-            }
             aux = aux.getNext();
+            while (aux != head)
+            {
+                if (aux.getValue().getId() == id)
+                {
+                    aux.getValue().setNombre(namemodif);
+                    break;
+                }
+                aux = aux.getNext();
+            }
         }
 
     }
+
+    public void eliminar(int id) {
+        if (head == null)
+        {
+            System.out.println("La lista esta vacia");
+        } else if (id == head.getValue().getId())
+        {
+            //Mueve head al siguiente nodo 
+            head = head.getNext();
+            //Mantiene la circularidad
+            tail.setNext(head);
+
+        } else
+        {
+            node<Persona> aux = head;
+            node<Persona> temp = aux.getNext();
+            while (aux.getNext() != tail)
+            {
+                if (temp.getValue().getId() == id)
+                {
+                    aux.setNext(aux.getNext().getNext());
+                    break;
+                }
+                aux = aux.getNext();
+                temp = aux.getNext();
+
+            }
+            if (id == tail.getValue().getId())
+            {
+                tail = aux;
+                tail.setNext(head);
+            }
+
+        }
+
+    }
+
+    public Persona extraer(int id) {
+        Persona p = null;
+        node<Persona> aux;
+        if (id == head.getValue().getId())
+        {
+            aux = head;
+            head = head.getNext();
+            tail.setNext(head);
+            return aux.getValue();
+        } else
+        {
+            aux = head;
+            node<Persona> temp = aux.getNext();
+            while (aux.getNext() != tail)
+            {
+                if (temp.getValue().getId() == id)
+                {
+                    aux.setNext(aux.getNext().getNext());
+                    return temp.getValue();
+                }
+
+                aux = aux.getNext();
+                temp = aux.getNext();
+
+            }
+            if (id == tail.getValue().getId())
+            {
+                tail = aux;
+                tail.setNext(head);
+                return temp.getValue();
+            }
+        }
+        if (p == null)
+        {
+            System.out.println("El ID: " + id + " no se ha encontrado en la lista");
+            p = new Persona(0, "N/A");
+
+        }
+        return p;
+
+    }
+
 }

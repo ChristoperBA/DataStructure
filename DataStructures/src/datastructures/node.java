@@ -12,11 +12,19 @@ public class node<T> {
 
     private T value;
     private node<T> next; // Apunta al siguiente nodo
+    private node<T> back;
 
     //Constructor
     public node(T value) {
         this.value = value;
-        this.next = next;
+        
+    }
+
+    public node<T> getBack() {
+        return back;
+    }
+    public void setBack(node<T> back) {
+        this.back = back;
     }
 
     //Get accede a value desde otra clase

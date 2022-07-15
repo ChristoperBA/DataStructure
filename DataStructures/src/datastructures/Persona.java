@@ -1,8 +1,7 @@
-
 package datastructures;
 
-
 public class Persona {
+
     private int id;
     private String nombre;
 
@@ -26,12 +25,12 @@ public class Persona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     @Override
-    public String toString(){
-    
-        return "Persona{"+"id="+id+", nombre="+nombre+'}';
-    
+    public String toString() {
+
+        return "Persona{" + "id=" + id + ", nombre=" + nombre + '}';
+
     }
-    
-    
+
 }
