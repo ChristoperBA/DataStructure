@@ -1,5 +1,7 @@
 package datastructures;
 
+import java.util.Scanner;
+
 public class Lista2Circular {
 
     private node<Persona> head;
@@ -94,11 +96,124 @@ public class Lista2Circular {
         }
         return false;
     }
-    public void modifica(Persona value){
+    public void modificar(int id) {
+        node<Persona> aux = head;
+        String namemodif;
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Se le cambiara el nombre: ");
+        namemodif = teclado.nextLine();
+
+        if (id == head.getValue().getId())
+        {
+
+            head.getValue().setNombre(namemodif);
+
+        } else if (id == tail.getValue().getId())
+        {
+            tail.getValue().setNombre(namemodif);
+        } else
+        {
+            aux = aux.getNext();
+            while (aux != head)
+            {
+                if (aux.getValue().getId() == id)
+                {
+                    aux.getValue().setNombre(namemodif);
+                    break;
+                }
+                aux = aux.getNext();
+            }
+        }
+
     }
-    public void elimina(Persona value){
+    public void eliminar(int id) {
+        if (head == null)
+        {
+            System.out.println("La lista esta vacia");
+        } else if (id == head.getValue().getId())
+        {
+            //Mueve head al siguiente nodo 
+            head = head.getNext();
+            head.setBack(tail);
+            //Mantiene la circularidad
+            tail.setNext(head);
+
+        } else
+        {
+            node<Persona> aux = head;
+            node<Persona> temp = aux.getNext();
+            while (aux.getNext() != tail)
+            {
+                if (temp.getValue().getId() == id)
+                {
+                    aux.setNext(aux.getNext().getNext());
+                    break;
+                }
+                aux = aux.getNext();
+                temp = aux.getNext();
+
+            }
+            if (id == tail.getValue().getId())
+            {
+                tail = aux;
+                tail.setNext(head);
+                head.setNext(tail);
+            }
+
+        }
+
     }
-    public void extrae(Persona value){
+    public Persona extraer(int id) {
+        Persona p = null;
+        node<Persona> aux;
+        if (id == head.getValue().getId())
+        {
+            //Vacia el head
+            aux = head;
+            //Establece el segundo nodo como el head
+            head = head.getNext();
+            //cola apunta a la cabeza
+            tail.setNext(head);
+            //Cabeza atras apunta al tail
+            head.setBack(tail);
+           
+            return aux.getValue();
+        } else
+        {
+            //Empezamos en la cabeza
+            aux = head;
+            node<Persona> temp = aux.getNext();
+            while (aux.getNext() != tail)
+            {
+                
+                if (temp.getValue().getId() == id)
+                {
+                    aux.setNext(aux.getNext().getNext());
+                    aux.getNext().getNext().setBack(aux);
+                    
+                    return temp.getValue();
+                }
+
+                aux = aux.getNext();
+                temp = aux.getNext();
+
+            }
+            if (id == tail.getValue().getId())
+            {
+                tail = aux;
+                tail.setNext(head);
+                head.setNext(tail);
+                return temp.getValue();
+            }
+        }
+        if (p == null)
+        {
+            System.out.println("El ID: " + id + " no se ha encontrado en la lista");
+            p = new Persona(id, "No existe");
+
+        }
+        return p;
+
     }
     
 }

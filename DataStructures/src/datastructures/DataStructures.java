@@ -73,17 +73,32 @@ public class DataStructures {
 //     ListaCircular.imprimirLista();
 //     ListaCircular.eliminar(5);
 //     System.out.println("\n");
-//     System.out.println(ListaCircular.extraer(6));
+//     System.out.println(ListaCircular.extraer(5));
+//     ListaCircular.imprimirLista();
+     
 
 //---------------------------Listas Doble Circular-------------------------//
-Lista2Circular ListaDobleCircular=new Lista2Circular();
-ListaDobleCircular.insertar(new Persona(3,"Amanda"));
-ListaDobleCircular.insertar(new Persona(1,"Stephanie"));
-ListaDobleCircular.insertar(new Persona(5,"Hilary"));
-ListaDobleCircular.insertar(new Persona(4,"Melannie"));
-ListaDobleCircular.imprimirLista();
+//Lista2Circular ListaDobleCircular=new Lista2Circular();
+//ListaDobleCircular.insertar(new Persona(3,"Amanda"));
+//ListaDobleCircular.insertar(new Persona(1,"Stephanie"));
+//ListaDobleCircular.insertar(new Persona(5,"Hilary"));
+//ListaDobleCircular.insertar(new Persona(4,"Melannie"));
+//ListaDobleCircular.imprimirLista();
+//System.out.println("\n");
 
 //Exite 
 //System.out.println(ListaDobleCircular.existe(4));
-    }
+//Extrae
+//System.out.println("\nLa siguiente persona ha sido removida de la lista");
+//System.out.println(ListaDobleCircular.extraer(9));
+//System.out.println("Lista:");
+//ListaDobleCircular.imprimirLista();
+//Modifica
+//ListaDobleCircular.modificar(3);
+//ListaDobleCircular.imprimirLista();
+//Elimina
+//ListaDobleCircular.eliminar(1);
+//ListaDobleCircular.imprimirLista();
+
+   }
 }
