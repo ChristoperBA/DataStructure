@@ -99,6 +99,23 @@ public class DataStructures {
 //Elimina
 //ListaDobleCircular.eliminar(1);
 //ListaDobleCircular.imprimirLista();
+//---------------------------Binary Search Tree-------------------------//
+BST Arbol= new BST();
+Arbol.inserta(50);
+Arbol.inserta(20);
+Arbol.inserta(80);
+Arbol.inserta(15);
+Arbol.inserta(30);
+Arbol.inserta(60);
+Arbol.inserta(40);
+Arbol.inserta(90);
+Arbol.inserta(75);
+Arbol.inserta(33);
+Arbol.inserta(82);
+Arbol.InOrden();
+
+
+
 
    }
 }
